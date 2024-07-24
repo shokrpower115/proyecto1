@@ -1,0 +1,106 @@
+/*body es para todo el programa, estilos generales*/
+body{
+    background: blanchedalmond;
+    font-family: sans-serif;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+} 
+
+/*maquetacion*/
+.layout{
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-areas: /*maquetacion*/
+    "header header header header"
+    "nav nav nav nav"
+    "content content content lateral"
+    "footer footer footer footer"
+    ;
+
+    /* pixeles de      :header, nav, contenido, footer*/
+    grid-template-rows: 100px 70px auto 70px; 
+
+}
+
+/*estilo de cabeceras*/
+
+.header{
+    grid-area: header;      /*nombre de su grid para la maquetacion*/
+
+    background: white;      /*color del fondo*/
+    text-align: left;       /* texto se ira a la izquierda*/
+    font-style: italic;     /*diseño de texto cursiva*/
+
+    display: flex; /*funciona como block*/
+    justify-content: center; /*centrar el contenido*/
+}
+
+.header h1{
+    margin-left: 15px; /*se levante un poco*/
+    margin-top: 30px;  /*margen para que quede en medio*/
+}
+
+.logo{
+    /*crear degradado con linear-gradient: grados, primer color y % de degradado, segundo color y % de degradado*/
+    background: linear-gradient(90deg, #03228f 10%, #0e73e4 100%);
+    width: 40px; /*ancho del area*/
+    height: 40px; /*altura*/
+    border-radius: 300px; /*circulo*/
+    margin-top: 30px;
+}
+
+.play{
+    width: 0px;
+    height: 0px;
+    margin-top: 15px; /*establece margen del lado de arriba*/
+    margin-left: 16px; /*establece margen del lado de la derecha*/
+    border-left: 12px solid white;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+}
+
+/*estilos de la barra de navegacion*/
+
+.nav{
+    grid-area: nav;
+    background: linear-gradient(90deg, #03228f 10%, #0e73e4 100%);
+
+}
+
+.nav > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.nav li{
+    padding: 10px; /*espacio entre contenido y borde*/
+}
+
+.nav a{
+    display: block;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.content{
+    grid-area: content;
+    border: 5px solid violet;
+    background: lightgoldenrodyellow;
+}
+
+.lateral{
+    grid-area: lateral;
+    border: 5px solid green;
+    background: lightgreen;
+}
+
+.footer{
+    grid-area: footer;
+    border: 5px solid yellow;
+    background: lightseagreen;
+}
